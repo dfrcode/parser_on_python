@@ -1,6 +1,17 @@
 from bs4 import BeautifulSoup
+from sys import *
 
-html = open('./parser/with_file/index.html')
+if __name__ == '__main__':
+    if len(argv) == 2:
+        file = argv[1]
+    elif len(argv) == 1:
+        print('Ошибка. Параметры не заданы!')
+        exit()
+    elif len(argv) > 2:
+        print('Ошибка. Задано очень много параметров!')
+        exit()
+
+html = open(file)
 
 content = html.read()
 
